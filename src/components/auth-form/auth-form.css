@@ -1,0 +1,9 @@
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  width: 26rem;
+  padding: 32px;
+  border-radius: 16px;
+  background-color: var(--secondary-background-color);
+  gap: 16px;
+}

@@ -1,11 +1,50 @@
+@import './normalize.css';
+
 :root {
+  --background-color: #242424;
+  --secondary-background-color: #303030;
+
+  --primary-foreground-color: #fafafa;
+  --secondary-foreground-color: #333;
+
+  --control-background-color: #cacaca;
+  --control-hover-background-color: #bebebe;
+  --muted-control-background-color: #bdbdbd;
+
+  --link-foreground-color: #646cff;
+  --link-hover-foreground-color: #535bf2;
+  --muted-link-foreground-color: #a5a5a5;
+
+  --button-background-color: #eeeeee;
+  --secondary-button-background-color: #5e5e5e;
+  --muted-button-background-color: #f5f5f5;
+  --secondary-muted-button-background-color: #555555;
+  --button-hover-background-color: #e0e0e0;
+  --secondary-button-hover-background-color: #777777;
+  --button-border-color: #cccccc;
+  --button-foreground-color: #333;
+  --secondary-button-foreground-color: #ffffff;
+  --muted-button-foreground-color: #494949;
+  --secondary-muted-button-foreground-color: #acacac;
+
+  --input-background-color: var(--control-background-color);
+  --input-border-color: #747474;
+  --input-foreground-color: #333;
+  --input-placeholder-color: #838383;
+  --input-hover-border-color: #666666;
+  --input-focus-border-color: #1a1a1a;
+  --input-disabled-background-color: #cfcfcf;
+  --input-disabled-foreground-color: #7e7e7e;
+  --input-disabled-border-color: #cfcfcf;
+  --input-disabled-placeholder-color: #a5a5a5;
+
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: var(--primary-foreground-color);
+  background-color: var(--background-color);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,11 +54,11 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--link-foreground-color);
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: var(--link-hover-foreground-color);
 }
 
 body {
@@ -30,39 +69,59 @@ body {
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+#root {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+    --background-color: #ffffff;
+    --secondary-background-color: #f5f5f5;
+
+    --primary-foreground-color: #213547;
+    --secondary-foreground-color: #ffffff;
+
+    --control-background-color: #bebebe;
+    --control-hover-background-color: #a5a5a5;
+    --muted-control-background-color: #cfcfcf;
+
+    --link-foreground-color: #0056b3;
+    --link-hover-foreground-color: #747bff;
+    --muted-link-foreground-color: #555555;
+
+    --button-background-color: #1f1f1f;
+    --secondary-button-background-color: #eeeeee;
+    --muted-button-background-color: #333333;
+    --secondary-muted-button-background-color: #f3f3f3;
+    --button-hover-background-color: #2f2f2f;
+    --secondary-button-hover-background-color: #e0e0e0;
+    --button-border-color: #3f3f3f;
+    --button-foreground-color: #ffffff;
+    --secondary-button-foreground-color: #333;
+    --muted-button-foreground-color: #ffffff;
+    --secondary-muted-button-foreground-color: #585858;
+
+    --input-background-color: var(--control-background-color);
+    --input-border-color: #a5a5a5;
+    --input-foreground-color: #333;
+    --input-placeholder-color: #838383;
+    --input-hover-border-color: #818181;
+    --input-focus-border-color: #5a5a5a;
+    --input-disabled-background-color: #cfcfcf;
+    --input-disabled-foreground-color: #7e7e7e;
+    --input-disabled-border-color: #cfcfcf;
+    --input-disabled-placeholder-color: #a5a5a5;
+    --input-invalid-border-color: #ff0000;
   }
 }

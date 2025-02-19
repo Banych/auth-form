@@ -1,0 +1,104 @@
+.button {
+  border-radius: 1rem;
+  border: unset;
+  padding: 0.6rem 1.2rem;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--button-background-color);
+  cursor: pointer;
+  transition: border-color 0.25s;
+  color: var(--button-foreground-color);
+  transition: background-color 0.25s;
+
+  &:not(:disabled):hover {
+    background-color: var(--button-hover-background-color);
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: var(--muted-button-background-color);
+    color: var(--muted-button-foreground-color);
+  }
+
+  .button-content__loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+
+    .spinner {
+      width: 1em;
+      height: 1em;
+      transition: transform 0.25s;
+      animation: spin 1s linear infinite;
+    }
+  }
+}
+
+.button--primary {
+  background-color: var(--button-background-color);
+  color: var(--button-foreground-color);
+}
+
+.button--secondary {
+  background-color: var(--secondary-button-background-color);
+  color: var(--secondary-button-foreground-color);
+
+  &:not(:disabled):hover {
+    background-color: var(--secondary-button-hover-background-color);
+  }
+
+  &:disabled {
+    background-color: var(--secondary-muted-button-background-color);
+    color: var(--secondary-muted-button-foreground-color);
+  }
+}
+
+.button--outlined {
+  background-color: transparent;
+  border: 2px solid var(--button-border-color);
+  color: var(--secondary-button-foreground-color);
+
+  &:not(:disabled):hover {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+  }
+
+  &:disabled {
+    background-color: transparent;
+    color: var(--secondary-muted-button-foreground-color);
+  }
+}
+
+.button--link {
+  background-color: transparent;
+  color: var(--link-foreground-color);
+  text-decoration: underline;
+
+  &:hover {
+    color: var(--link-hover-foreground-color);
+    background-color: unset !important;
+  }
+
+  &:disabled {
+    background-color: unset;
+    color: var(--secondary-muted-button-foreground-color);
+  }
+}
+
+.button--small {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.875rem;
+  border-radius: 0.5rem;
+}
+
+.button--large {
+  padding: 0.8rem 1.6rem;
+  font-size: 1.125rem;
+  border-radius: 1.5rem;
+}
