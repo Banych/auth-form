@@ -1,7 +1,9 @@
 import { ReactNode, useCallback, useState } from 'react'
-import './toggle-button.css'
+
 import cn from '@utils/cn'
 import Button from '@components/ui/button/button'
+
+import './toggle-button.css'
 
 type ToggleButtonProps = {
   isToggled?: boolean

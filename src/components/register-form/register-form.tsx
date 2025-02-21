@@ -1,11 +1,13 @@
-import { Controller, useForm } from 'react-hook-form'
-import './register-form.css'
-import registerSchema, { RegisterSchema } from '@schemas/register-schema'
-import { zodResolver } from '@hookform/resolvers/zod'
 import { FC, useMemo } from 'react'
+import { Controller, useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+
+import registerSchema, { RegisterSchema } from '@schemas/register-schema'
 import Input from '@components/ui/input'
 import Button from '@components/ui/button'
 import PasswordInput from '@components/ui/password-input/password-input'
+
+import './register-form.css'
 
 type RegisterFormProps = {
   onRegister: (data: RegisterSchema) => Promise<void>
@@ -25,11 +27,7 @@ const RegisterForm: FC<RegisterFormProps> = ({ onRegister, isLoading }) => {
   })
 
   const isSubmitDisabled = useMemo(() => {
-    return (
-      !formMethods.formState.isValid ||
-      !formMethods.formState.isDirty ||
-      formMethods.formState.isSubmitting
-    )
+    return formMethods.formState.isSubmitted && !formMethods.formState.isValid
   }, [formMethods.formState])
 
   const handleSubmitForm = handleSubmit((data) => {

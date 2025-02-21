@@ -1,7 +1,3 @@
-import Button from '@components/ui/button'
-import Input from '@components/ui/input'
-import cn from '@utils/cn'
-import { Eye, EyeClosed } from 'lucide-react'
 import {
   ComponentPropsWithoutRef,
   ComponentRef,
@@ -10,6 +6,12 @@ import {
   useMemo,
   useState,
 } from 'react'
+import { Eye, EyeClosed } from 'lucide-react'
+
+import cn from '@utils/cn'
+
+import Button from '@components/ui/button'
+import Input from '@components/ui/input'
 
 import './password-input.css'
 

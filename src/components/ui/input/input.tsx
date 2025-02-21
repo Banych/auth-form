@@ -1,7 +1,8 @@
 import { forwardRef, InputHTMLAttributes } from 'react'
 
-import './input.css'
 import cn from '@utils/cn'
+
+import './input.css'
 
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   label?: string

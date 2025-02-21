@@ -1,7 +1,3 @@
-import fakeApiClient from '@api/client'
-import { User } from '@models/user-type'
-import { LoginSchema } from '@schemas/login-schema'
-import { RegisterSchema } from '@schemas/register-schema'
 import {
   createContext,
   FC,
@@ -9,6 +5,11 @@ import {
   useCallback,
   useState,
 } from 'react'
+
+import { User } from '@models/user-type'
+import fakeApiClient from '@api/client'
+import { LoginSchema } from '@schemas/login-schema'
+import { RegisterSchema } from '@schemas/register-schema'
 
 export type UserContextType = {
   user: User | null

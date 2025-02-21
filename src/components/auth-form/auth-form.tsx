@@ -1,12 +1,13 @@
 import { useCallback, useState } from 'react'
-import ToggleButton from '@components/ui/toggle-button'
-import RegisterForm from '@components/register-form'
 
-import './auth-form.css'
-import LoginForm from '@components/login-form'
+import useUserContext from '@hooks/use-user-context'
 import { RegisterSchema } from '@schemas/register-schema'
 import { LoginSchema } from '@schemas/login-schema'
-import useUserContext from '@hooks/use-user-context'
+import ToggleButton from '@components/ui/toggle-button'
+import RegisterForm from '@components/register-form'
+import LoginForm from '@components/login-form'
+
+import './auth-form.css'
 
 const AuthForm = () => {
   const [isRegister, setIsRegister] = useState(false)

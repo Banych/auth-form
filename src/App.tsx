@@ -1,7 +1,8 @@
 import useUserContext from '@hooks/use-user-context'
-import './App.css'
 import AuthForm from '@components/auth-form'
 import WelcomeUser from '@components/welcome-user'
+
+import './App.css'
 
 function App() {
   const { user, logout } = useUserContext()

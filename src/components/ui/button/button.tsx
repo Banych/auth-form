@@ -1,7 +1,9 @@
 import { ButtonHTMLAttributes, forwardRef } from 'react'
 import { Loader } from 'lucide-react'
-import './button.css'
+
 import cn from '@utils/cn'
+
+import './button.css'
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   isLoading?: boolean

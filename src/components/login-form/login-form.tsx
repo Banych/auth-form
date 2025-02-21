@@ -1,10 +1,11 @@
+import { FC, useMemo } from 'react'
+import { Controller, useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+
+import loginSchema, { LoginSchema } from '@schemas/login-schema'
 import Button from '@components/ui/button'
 import Input from '@components/ui/input'
 import PasswordInput from '@components/ui/password-input'
-import { zodResolver } from '@hookform/resolvers/zod'
-import loginSchema, { LoginSchema } from '@schemas/login-schema'
-import { FC } from 'react'
-import { Controller, useForm } from 'react-hook-form'
 
 import './login-form.css'
 
@@ -15,16 +16,18 @@ type LoginFormProps = {
 
 const LoginForm: FC<LoginFormProps> = ({ onLogin, isLoading }) => {
   const { handleSubmit, control, ...formMethods } = useForm<LoginSchema>({
-    mode: 'all',
+    mode: 'onSubmit',
     resolver: zodResolver(loginSchema),
     defaultValues: {
       email: '',
       password: '',
     },
+    reValidateMode: 'onChange',
   })
 
-  const isSubmitButtonDisabled =
-    !formMethods.formState.isValid || !formMethods.formState.isDirty
+  const isSubmitButtonDisabled = useMemo(() => {
+    return formMethods.formState.isSubmitted && !formMethods.formState.isValid
+  }, [formMethods.formState])
 
   const handleSubmitForm = handleSubmit((data) => {
     onLogin(data)

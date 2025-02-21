@@ -1,6 +1,7 @@
-import Button from '@components/ui/button'
-import { User } from '@models/user-type'
 import { FC } from 'react'
+
+import { User } from '@models/user-type'
+import Button from '@components/ui/button'
 
 import './welcome-user.css'
 

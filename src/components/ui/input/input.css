@@ -37,14 +37,9 @@
     right: 0;
   }
 
-  .input-wrapper input {
-    padding-left: calc(1.2rem + 1rem); /* Adjust based on adornment size */
-    padding-right: calc(1.2rem + 1rem); /* Adjust based on adornment size */
-  }
-
   input {
     padding: 0.6rem 1.2rem;
-    border: 2px solid var(--input-border-color);
+    border: 0.125rem solid var(--input-border-color);
     border-radius: 1rem;
     width: 100%;
     box-sizing: border-box;
