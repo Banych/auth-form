@@ -1,50 +1,65 @@
-# React + TypeScript + Vite
+# AuthFormApp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+AuthFormApp is a simple authentication form application that showcases login and register functionality. This application is built using modern web technologies and is intended for demonstration purposes. The API used in this application is faked to simulate real-world scenarios.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- User registration
+- User login
+- Form validation
+- User context management
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **React**: A JavaScript library for building user interfaces.
+- **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript.
+- **Vite**: A fast build tool and development server.
+- **React Hook Form**: A library for managing form state and validation.
+- **Zod**: A TypeScript-first schema declaration and validation library.
+- **clsx**: A utility for constructing `className` strings conditionally.
+- **tailwind-merge**: A utility to merge Tailwind CSS classes.
+- **Lucide React**: A library of icons for React.
+- **Prettier**: A code formatter.
+- **ESLint**: A tool for identifying and fixing problems in JavaScript code.
 
-- Configure the top-level `parserOptions` property like this:
+## Getting Started
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Prerequisites
+
+- Node.js (v14 or higher)
+- yarn (v1.22 or higher)
+
+### Installation
+
+1. Clone the repository:
+
+```sh
+git clone https://github.com/banych/auth-form.git
+cd auth-form
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Install dependencies:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+```sh
+yarn
+```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+### Running the Application
+
+```sh
+yarn dev
+```
+
+Open your browser and visit `http://localhost:3000`.
+
+### Building the Application
+
+```sh
+yarn build
+```
+
+### Linting the Application
+
+```sh
+yarn lint
 ```
