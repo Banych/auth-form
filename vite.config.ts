@@ -16,4 +16,7 @@ export default defineConfig({
       '@hooks': resolve(__dirname, 'src/hooks'),
     },
   },
+  build: {
+    outDir: 'build', // Ensure this matches the directory in the workflow
+  },
 })
