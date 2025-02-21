@@ -12,6 +12,8 @@ export default defineConfig({
       '@constants': resolve(__dirname, 'src/constants'),
       '@schemas': resolve(__dirname, 'src/schemas'),
       '@models': resolve(__dirname, 'src/models'),
+      '@providers': resolve(__dirname, 'src/providers'),
+      '@hooks': resolve(__dirname, 'src/hooks'),
     },
   },
 })

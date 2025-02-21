@@ -45,6 +45,7 @@ const registerSchema = z
   })
   .refine((data) => data.password === data.passwordConfirmation, {
     message: 'Passwords do not match',
+    path: ['passwordConfirmation'],
   })
 
 export type RegisterSchema = z.infer<typeof registerSchema>

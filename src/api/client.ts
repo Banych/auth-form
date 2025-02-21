@@ -1,8 +1,9 @@
 import { User, UserDTO } from '@models/user-type'
+import { LoginSchema } from '@schemas/login-schema'
 import { RegisterSchema } from '@schemas/register-schema'
 
 const fakeApiClient = {
-  login: async (username: string, password: string) => {
+  login: async (credentials: LoginSchema) => {
     return new Promise<User>((resolve, reject) => {
       setTimeout(() => {
         const users = localStorage.getItem('users')
@@ -10,18 +11,18 @@ const fakeApiClient = {
         if (!users) {
           localStorage.setItem('users', JSON.stringify([]))
 
-          return reject('No user with this username')
+          return reject('No user with this username. Please register yourself!')
         }
 
         const usersArray: UserDTO[] = JSON.parse(users)
 
-        const user = usersArray.find((user) => user.username === username)
+        const user = usersArray.find((item) => item.email === credentials.email)
 
         if (!user) {
-          return reject('No user with this username')
+          return reject('No user with this username found.')
         }
 
-        if (user.password !== password) {
+        if (user.password !== credentials.password) {
           return reject('Wrong password')
         }
 
@@ -32,7 +33,7 @@ const fakeApiClient = {
     })
   },
   register: async (user: RegisterSchema) => {
-    return new Promise((resolve, reject) => {
+    return new Promise<User>((resolve, reject) => {
       setTimeout(() => {
         const users = localStorage.getItem('users') || '[]'
 

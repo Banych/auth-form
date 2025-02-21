@@ -5,7 +5,7 @@ import cn from '@utils/cn'
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   isLoading?: boolean
-  variant?: 'primary' | 'secondary' | 'outlined' | 'link'
+  variant?: 'primary' | 'secondary' | 'outlined' | 'link' | 'icon'
   size?: 'small' | 'medium' | 'large'
 }
 

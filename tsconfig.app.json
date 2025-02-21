@@ -40,7 +40,13 @@
       ],
       "@models/*": [
         "src/models/*"
-      ]
+      ],
+      "@hooks/*": [
+        "src/hooks/*"
+      ],
+      "@providers/*": [
+        "src/providers/*"
+      ],
     }
   },
   "include": [

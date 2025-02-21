@@ -3,9 +3,11 @@
 :root {
   --background-color: #242424;
   --secondary-background-color: #303030;
+  --tertiary-background-color: #1a1a1a;
 
   --primary-foreground-color: #fafafa;
   --secondary-foreground-color: #333;
+  --subtitle-foreground-color: #a5a5a5;
 
   --control-background-color: #cacaca;
   --control-hover-background-color: #bebebe;
@@ -17,7 +19,7 @@
 
   --button-background-color: #eeeeee;
   --secondary-button-background-color: #5e5e5e;
-  --muted-button-background-color: #f5f5f5;
+  --muted-button-background-color: #bebebe;
   --secondary-muted-button-background-color: #555555;
   --button-hover-background-color: #e0e0e0;
   --secondary-button-hover-background-color: #777777;
@@ -37,6 +39,7 @@
   --input-disabled-foreground-color: #7e7e7e;
   --input-disabled-border-color: #cfcfcf;
   --input-disabled-placeholder-color: #a5a5a5;
+  --input-invalid-border-color: #ff0000;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -75,6 +78,10 @@ body {
   display: flex;
 }
 
+.drop-shadow {
+  box-shadow: 0.1rem 0.1rem 1rem 0.1rem var(--tertiary-background-color);
+}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -88,9 +95,11 @@ body {
   :root {
     --background-color: #ffffff;
     --secondary-background-color: #f5f5f5;
+    --tertiary-background-color: #e0e0e0;
 
     --primary-foreground-color: #213547;
     --secondary-foreground-color: #ffffff;
+    --subtitle-foreground-color: #5a5a5a;
 
     --control-background-color: #bebebe;
     --control-hover-background-color: #a5a5a5;

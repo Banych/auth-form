@@ -1,28 +1,55 @@
 import { useCallback, useState } from 'react'
+import ToggleButton from '@components/ui/toggle-button'
+import RegisterForm from '@components/register-form'
 
 import './auth-form.css'
-import Button from '@components/ui/button'
-import ToggleButton from '@components/ui/toggle-button'
-import Input from '@components/ui/input'
-import RegisterForm from '@components/register-form/register-form'
+import LoginForm from '@components/login-form'
+import { RegisterSchema } from '@schemas/register-schema'
+import { LoginSchema } from '@schemas/login-schema'
+import useUserContext from '@hooks/use-user-context'
 
 const AuthForm = () => {
   const [isRegister, setIsRegister] = useState(false)
+
+  const { isLoading: isAuthLoading, login, register } = useUserContext()
 
   const handleToggleFormType = useCallback((isRegister: boolean) => {
     setIsRegister(isRegister)
   }, [])
 
+  const handleRegister = useCallback(
+    async (data: RegisterSchema) => {
+      await register(data)
+    },
+    [register]
+  )
+
+  const handleLogin = useCallback(
+    async (data: LoginSchema) => {
+      await login(data)
+    },
+    [login]
+  )
+
   return (
-    <div className="auth-form">
-      <h1>{isRegister ? 'Register' : 'Login'}</h1>
-      {isRegister ? <RegisterForm /> : 'Login form'}
-      <ToggleButton
-        offLabel="Login"
-        onLabel="Register"
-        onToggle={handleToggleFormType}
-        isToggled={isRegister}
-      />
+    <div className="auth-form drop-shadow">
+      <div className="auth-form__header">
+        <h2>Welcome to our AuthFormApp</h2>
+        <p>Please {isRegister ? 'register' : 'login'} to continue</p>
+      </div>
+      <div className="auth-form__content">
+        <ToggleButton
+          offLabel="Login"
+          onLabel="Register"
+          onToggle={handleToggleFormType}
+          isToggled={isRegister}
+        />
+        {isRegister ? (
+          <RegisterForm onRegister={handleRegister} isLoading={isAuthLoading} />
+        ) : (
+          <LoginForm onLogin={handleLogin} isLoading={isAuthLoading} />
+        )}
+      </div>
     </div>
   )
 }
