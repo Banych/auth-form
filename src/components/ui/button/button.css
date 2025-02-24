@@ -17,7 +17,8 @@
 
   &:focus,
   &:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
+    outline: 4px auto var(--control-outline-color);
+    outline-offset: 2px;
   }
 
   &:disabled {

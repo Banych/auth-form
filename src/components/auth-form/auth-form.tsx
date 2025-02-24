@@ -44,6 +44,7 @@ const AuthForm = () => {
           onLabel="Register"
           onToggle={handleToggleFormType}
           isToggled={isRegister}
+          aria-label="Toggle between login and register"
         />
         {isRegister ? (
           <RegisterForm onRegister={handleRegister} isLoading={isAuthLoading} />

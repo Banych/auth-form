@@ -41,9 +41,12 @@ const LoginForm: FC<LoginFormProps> = ({ onLogin, isLoading }) => {
         render={({ field: { disabled, ...field }, fieldState }) => (
           <Input
             {...field}
+            id="email"
             disabled={disabled || isLoading}
             label="Email"
             error={fieldState.error?.message}
+            aria-invalid={!!fieldState.error}
+            aria-describedby={fieldState.error ? 'email-error' : undefined}
           />
         )}
       />
@@ -53,9 +56,12 @@ const LoginForm: FC<LoginFormProps> = ({ onLogin, isLoading }) => {
         render={({ field: { disabled, ...field }, fieldState }) => (
           <PasswordInput
             {...field}
+            id="password"
             disabled={disabled || isLoading}
             label="Password"
             error={fieldState.error?.message}
+            aria-invalid={!!fieldState.error}
+            aria-describedby={fieldState.error ? 'password-error' : undefined}
           />
         )}
       />

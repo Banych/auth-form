@@ -12,6 +12,7 @@
   --control-background-color: #cacaca;
   --control-hover-background-color: #bebebe;
   --muted-control-background-color: #bdbdbd;
+  --control-outline-color: #1a1a1a;
 
   --link-foreground-color: #646cff;
   --link-hover-foreground-color: #535bf2;
@@ -34,7 +35,7 @@
   --input-foreground-color: #333;
   --input-placeholder-color: #838383;
   --input-hover-border-color: #666666;
-  --input-focus-border-color: #1a1a1a;
+  --input-focus-border-color: #000000;
   --input-disabled-background-color: #cfcfcf;
   --input-disabled-foreground-color: #7e7e7e;
   --input-disabled-border-color: #cfcfcf;
@@ -97,6 +98,7 @@ a:hover {
     --control-background-color: #bebebe;
     --control-hover-background-color: #a5a5a5;
     --muted-control-background-color: #cfcfcf;
+    --control-outline-color: #353535;
 
     --link-foreground-color: #0056b3;
     --link-hover-foreground-color: #747bff;

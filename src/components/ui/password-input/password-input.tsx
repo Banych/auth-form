@@ -47,6 +47,7 @@ const PasswordInput = forwardRef<
           variant="icon"
           onClick={handleClick}
           className="input-adornment--button"
+          aria-label={showPassword ? 'Hide password' : 'Show password'}
         >
           {EyeAdornment}
         </Button>

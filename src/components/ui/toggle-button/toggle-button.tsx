@@ -38,6 +38,7 @@ const ToggleButton = ({
       className={cn('toggle-button', isToggled && 'toggled')}
       disabled={disabled}
       onClick={handleToggle}
+      aria-pressed={isToggled}
     >
       <span className="toggle-option">{offLabel}</span>
       <span className={cn('toggle-indicator', isToggled && 'toggled')}></span>

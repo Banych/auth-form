@@ -42,6 +42,7 @@ const RegisterForm: FC<RegisterFormProps> = ({ onRegister, isLoading }) => {
         render={({ field: { disabled, ...field }, fieldState }) => (
           <Input
             {...field}
+            id="username"
             disabled={disabled || isLoading}
             label="User name"
             error={fieldState.error?.message}
@@ -54,6 +55,7 @@ const RegisterForm: FC<RegisterFormProps> = ({ onRegister, isLoading }) => {
         render={({ field: { disabled, ...field }, fieldState }) => (
           <Input
             {...field}
+            id="email"
             disabled={disabled || isLoading}
             label="Email"
             error={fieldState.error?.message}
@@ -66,6 +68,7 @@ const RegisterForm: FC<RegisterFormProps> = ({ onRegister, isLoading }) => {
         render={({ field: { disabled, ...field }, fieldState }) => (
           <PasswordInput
             {...field}
+            id="password"
             disabled={disabled || isLoading}
             label="Password"
             error={fieldState.error?.message}
@@ -78,6 +81,7 @@ const RegisterForm: FC<RegisterFormProps> = ({ onRegister, isLoading }) => {
         render={({ field: { disabled, ...field }, fieldState }) => (
           <PasswordInput
             {...field}
+            id="passwordConfirmation"
             disabled={disabled || isLoading}
             label="Password confirmation"
             error={fieldState.error?.message}

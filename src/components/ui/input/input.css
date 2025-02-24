@@ -64,6 +64,11 @@
       border-color: var(--input-focus-border-color);
     }
 
+    &:focus-visible {
+      outline: 2px solid var(--control-outline-color);
+      outline-offset: 2px;
+    }
+
     &:invalid {
       border-color: var(--input-invalid-border-color);
     }
