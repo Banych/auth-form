@@ -60,16 +60,9 @@ a {
   color: var(--link-foreground-color);
   text-decoration: inherit;
 }
+
 a:hover {
   color: var(--link-hover-foreground-color);
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 20rem;
-  min-height: 100vh;
 }
 
 #root {

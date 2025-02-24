@@ -25,3 +25,12 @@
     background-color: var(--secondary-background-color);
   }
 }
+
+@media screen and (max-width: 640px) {
+  .auth-form {
+    width: 100%;
+    border-radius: unset;
+    box-shadow: none !important;
+    margin: auto;
+  }
+}
